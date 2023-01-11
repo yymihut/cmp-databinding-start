@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
   serverElements = [];
 // {type:'server', name:'bubuuuuuur', content:'testullllll'}
   constructor() { }
@@ -37,5 +40,14 @@ export class AppComponent {
   sterge() {
     this.serverElements.splice(0, 1)
   }
+
+  onIntervalFired(numarul: number) {
+    console.log(numarul)
+    if (numarul % 2 === 0){
+      this.evenNumbers.push(numarul)
+    } else {
+      this.oddNumbers.push(numarul)
+    }
+}
 
 }
